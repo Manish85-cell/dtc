@@ -14,8 +14,7 @@ const router=createBrowserRouter(
       <Route path='' element={<Home/>}/>
       <Route path='bus' element={<Bus/>}/>
       <Route path='login' element={<Login/>}/>
-    </Route>
-    
+    </Route>   
   )
 )
 ReactDOM.createRoot(document.getElementById('root')).render(
