@@ -7,6 +7,8 @@ import Home from './component/Home';
 import Bus from './component/Bus';
 import Layout from './component/Layout';
 import Login from './component/Login';
+import Routes from './component/Routes';
+import Loginkbaad from './component/Loginkbaad';
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -14,6 +16,8 @@ const router=createBrowserRouter(
       <Route path='' element={<Home/>}/>
       <Route path='bus' element={<Bus/>}/>
       <Route path='login' element={<Login/>}/>
+      <Route path='routes' element={<Routes/>}/>
+      <Route path='slogin' element={<Loginkbaad/>}/>
     </Route>
     
   )
