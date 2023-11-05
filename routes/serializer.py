@@ -16,6 +16,12 @@ class RouteSerializer(serializers.ModelSerializer):
         model = Routes
         fields = ['source', 'reachable']
 class BusCodesSerializer(serializers.ModelSerializer):
+    def to_representation(self, instance):
+        representation= super().to_representation(instance)
+        codes = representation['route'].split(',')
+        stands = [BusStand.objects.get(code=code).Name for code in codes]
+        representation['route'] = stands
+        return representation 
     class Meta:
         model = Bus
         fields = ['bus_code', 'route']
