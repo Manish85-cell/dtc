@@ -22,8 +22,14 @@ class RouteList(ListAPIView):
         
    
 class Bus_Codes_List(ListAPIView):
-    queryset = Bus.objects.all()
+    
     serializer_class = BusCodesSerializer
+    def get_queryset(self):
+        code = self.request.GET.get('bus_code')
+        if code is not None:
+            return Bus.objects.filter(bus_code = code)
+        else:
+            return Bus.objects.all()
 
 
 # class Bus_Routes(ListAPIView):
