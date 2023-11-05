@@ -40,16 +40,24 @@ class Conductor(models.Model):
     salary = models.IntegerField()
     working_shift = models.CharField(max_length=64)
     
-#     def __str__(self):
-#         return f"({self.D_id}) {self.D_name}"
+    def __str__(self):
+        return f"({self.D_id}) {self.D_name}"
 
 class Tickets(models.Model):
     T_id = models.IntegerField(primary_key=True)
     Bus_no = models.ForeignKey(Bus, on_delete=models.CASCADE, related_name="t_no")   
     source = models.ForeignKey(BusStand, on_delete=models.CASCADE, related_name="dest")
     destination = models.ForeignKey(BusStand, on_delete=models.CASCADE, related_name="src")
-   
+    def __str__(self):
+       return f"({self.C_id}) {self.C_name}"
 
-   
+class Fare(models.Model):
+    choices=(
+        (1, '5'),
+        (2, '10'),
+        (3, '15')
+    )
+    Number_of_Stands_covered : models.IntegerField(primary_key  = True)
+    Price : models.IntegerChoices(choices=choices)   
 
 

@@ -23,6 +23,9 @@ class ConductorList(ListAPIView):
 class DriverList(ListAPIView):
     queryset = Driver.objects.all()
     serializer_class = DriverSerializer
+class FareList(ListAPIView):
+    queryset = Fare.objects.all()
+    serializer_class = FareSerializer
    
         
    

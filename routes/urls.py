@@ -6,5 +6,6 @@ urlpatterns = [
     path("bus/",views.Bus_Codes_List.as_view()),
     path("conductor/",views.ConductorList.as_view()),
     path("driver/",views.DriverList.as_view()),
+    path("fare/",views.FareList.as_view()),
     
 ]

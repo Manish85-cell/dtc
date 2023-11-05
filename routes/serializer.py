@@ -12,6 +12,10 @@ class DriverSerializer(serializers.ModelSerializer):
     class Meta:
         model = Driver
         fields = ['D_id', 'D_name', 'salary', 'working_shift']
+class FareSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Fare
+        fields = ['Number_of_Stands_covered', 'Price']
 class RouteSerializer(serializers.ModelSerializer):
     source = serializers.StringRelatedField()
     def to_representation(self, instance):
