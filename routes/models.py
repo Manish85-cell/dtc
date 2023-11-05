@@ -1,5 +1,5 @@
 from django.db import models
-
+import random
 
 # Create your models here.
 class BusStand(models.Model):
@@ -32,6 +32,7 @@ class Driver(models.Model):
     salary = models.IntegerField()
     working_shift = models.CharField(max_length=64)
     
+    
     def __str__(self):
         return f"({self.D_id}) {self.D_name}"
 class Conductor(models.Model):
@@ -39,7 +40,6 @@ class Conductor(models.Model):
     C_name = models.CharField(max_length=64)
     salary = models.IntegerField()
     working_shift = models.CharField(max_length=64)
-   
     def __str__(self):
         return f"({self.C_id}) {self.C_name}"
 

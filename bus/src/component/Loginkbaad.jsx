@@ -37,7 +37,7 @@ const Loginkbaad=()=>{
     }
     const handleSearch = () => {
         // You can implement your search logic here
-        const num=parseInt(sub);
+     const num=parseInt(sub);
       const c= dat.find((e)=>e.bus_code===num);
       if (c) {
         setSearchResult(c.route);
