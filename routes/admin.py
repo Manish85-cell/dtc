@@ -11,17 +11,17 @@ class BusAdmin(admin.ModelAdmin):
 class RouteAdmin(admin.ModelAdmin):
     list_display=['source', 'reachable']
 class ConductorAdmin(admin.ModelAdmin):
-    list_display=['source', 'reachable']
+    list_display=['C_id', 'C_name', 'salary', 'working_shift']
 class DriverAdmin(admin.ModelAdmin):
-    list_display=['source', 'reachable']
+    list_display=['D_id', 'D_name', 'salary', 'working_shift']
 class FareAdmin(admin.ModelAdmin):
-    list_display=['source', 'reachable']
+    list_display=['Number_of_Stands_covered', 'Price']
 class TicketAdmin(admin.ModelAdmin):
-    list_display=['source', 'reachable']
+    list_display=['T_id', 'Bus_no', 'source', 'destination']
 admin.site.register(Bus, BusAdmin)
 admin.site.register(BusStand, Bus_StandAdmin)
 admin.site.register(Routes, RouteAdmin)
-admin.site.register(Tickets)
-admin.site.register(Conductor)
-admin.site.register(Driver)
-admin.site.register(Fare)
+admin.site.register(Tickets, TicketAdmin)
+admin.site.register(Conductor, ConductorAdmin)
+admin.site.register(Driver, DriverAdmin)
+admin.site.register(Fare, FareAdmin)
