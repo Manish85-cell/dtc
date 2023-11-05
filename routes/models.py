@@ -52,12 +52,12 @@ class Tickets(models.Model):
        return f"({self.C_id}) {self.C_name}"
 
 class Fare(models.Model):
-    choices=(
-        (1, '5'),
-        (2, '10'),
-        (3, '15')
-    )
+    # choices=(
+    #     (1, '5'),
+    #     (2, '10'),
+    #     (3, '15')
+    # )
     Number_of_Stands_covered : models.IntegerField(primary_key  = True)
-    Price : models.IntegerChoices(choices=choices)   
+    Price : models.IntegerField()  
 
 
