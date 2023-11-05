@@ -13,6 +13,8 @@ export default function Login(){
 
   return (
     <>
+  <div className="bg-slate-300">
+
         <div className="relative inset-0 mt-5 w-1/2 h-1/2  top-20">
             <img src={bus1} alt="anypic" className="w-full h-full object-cover" />
         </div>
@@ -41,6 +43,7 @@ export default function Login(){
         </button>
       </div>
     </div>
+  </div>
     </>
   )
     
