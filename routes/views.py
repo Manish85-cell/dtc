@@ -44,6 +44,6 @@ class Bus_Codes_List(ListAPIView):
 #     inp_code = request.GET.get('inp_code')
     
 #     queryset = Bus.objects.raw("SELECT Name FROM route_BusStand WHERE code = (SELECT route FROM route_Bus WHERE bus_code = %s Cross Apply String_split(TAGS, (,))", [inp_code])
-
+ 
 #     serializer =_class = RouteSerializer
 
