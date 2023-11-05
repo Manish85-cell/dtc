@@ -7,6 +7,7 @@ const Loginkbaad=()=>{
     const [dat,setdat]=useState([]);
     const [sub,setsub]=useState(0);
     const [result,setSearchResult]=useState([]);
+    const [bus,setBus]=useState(null);
     const b=usebusinfo();
     useEffect(()=>{
         async function getbus(){
@@ -22,7 +23,18 @@ const Loginkbaad=()=>{
         }
         getbus()
     },[]);
-
+    const handleSearch1=()=>{
+         //console.log(`${from} to $ ${to}`);
+         const d = dat.find((e) => e.route.some((stop) => stop === from  ));
+         const e = dat.find((e) => e.route.some((stop) => stop === to  ));
+         if(d.bus_code===e.bus_code){
+            setBus(d.bus_code);
+         }
+         else{
+            setBus(null);
+         }
+         
+    }
     const handleSearch = () => {
         // You can implement your search logic here
         const num=parseInt(sub);
@@ -30,9 +42,8 @@ const Loginkbaad=()=>{
       if (c) {
         setSearchResult(c.route);
       } else {
-        setSearchResult('Not found');
+        setSearchResult(null);
       }
-      window.alert(result);
     }
     return(
         <>
@@ -59,7 +70,7 @@ const Loginkbaad=()=>{
                             b.map((buss,index)=>{
                                 return(
                                     <option key={index} value={buss.Name}>
-                            {buss.Name}
+                            {buss.Name} {buss.code}
                             </option>
                                 )
                             })
@@ -75,7 +86,7 @@ const Loginkbaad=()=>{
                             b.map((buss,index)=>{
                                 return(
                                     <option key={index} value={buss.Name}>
-                            {buss.Name}
+                            {buss.Name}  {buss.code}
                             </option>
                                 )
                             })
@@ -84,7 +95,7 @@ const Loginkbaad=()=>{
                 </select>
             <button
             className="bg-blue-500 text-white p-2 rounded"
-            onClick={handleSearch}
+            onClick={handleSearch1}
             >
             Search
             </button>
@@ -105,6 +116,37 @@ const Loginkbaad=()=>{
             Search
             </button>
          </div>
+        </div>
+        <div className="w-full text-center">
+          <div className="text-xl">
+            <div>
+              {/* Conditional rendering of the result */}
+              {result !== null ? (
+                (
+                    <div className="text-blue-600 font-bold">
+                        <div className="text-2xl ">
+                Search Result of {sub} bus no
+              </div>
+                        {Object.keys(result).map((dst,index)=>{
+                            return(
+                        <p key={index}>
+                            {dst}:{result[dst]}
+                            </p>)
+                    })}</div>
+                  )
+              ) :((<div className="text-gray-600">..</div>))}
+            </div>
+
+            <div>
+                {bus!==null ?(
+                    <div className="text-blue-600 font-bold">
+                    <div className="text-2xl bg-">
+            YOU HAVE TO TRAVEL IN BUS NO {bus} ;
+          </div>
+          </div>
+                ):(<div className="text-gray-600"> Please perform a search.</div>) }
+            </div>
+          </div>
         </div>
     </div>
 
