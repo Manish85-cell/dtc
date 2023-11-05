@@ -10,6 +10,14 @@ class BusAdmin(admin.ModelAdmin):
     list_display=['bus_code', 'route']
 class RouteAdmin(admin.ModelAdmin):
     list_display=['source', 'reachable']
+class ConductorAdmin(admin.ModelAdmin):
+    list_display=['source', 'reachable']
+class DriverAdmin(admin.ModelAdmin):
+    list_display=['source', 'reachable']
+class FareAdmin(admin.ModelAdmin):
+    list_display=['source', 'reachable']
+class TicketAdmin(admin.ModelAdmin):
+    list_display=['source', 'reachable']
 admin.site.register(Bus, BusAdmin)
 admin.site.register(BusStand, Bus_StandAdmin)
 admin.site.register(Routes, RouteAdmin)

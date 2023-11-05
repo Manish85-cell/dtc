@@ -39,9 +39,9 @@ class Conductor(models.Model):
     C_name = models.CharField(max_length=64)
     salary = models.IntegerField()
     working_shift = models.CharField(max_length=64)
-    
+   
     def __str__(self):
-        return f"({self.D_id}) {self.D_name}"
+        return f"({self.C_id}) {self.C_name}"
 
 class Tickets(models.Model):
     T_id = models.IntegerField(primary_key=True)
@@ -52,12 +52,8 @@ class Tickets(models.Model):
        return f"({self.C_id}) {self.C_name}"
 
 class Fare(models.Model):
-    # choices=(
-    #     (1, '5'),
-    #     (2, '10'),
-    #     (3, '15')
-    # )
-    Number_of_Stands_covered : models.IntegerField(primary_key  = True)
-    Price : models.IntegerField()  
-
+    Number_of_Stands_covered = models.IntegerField(primary_key  = True)
+    Price = models.IntegerField()
+    def __str__(self):
+        return f"{self.Number_of_Stands_covered} ({self.Price})"
 
