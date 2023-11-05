@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BusStand, Routes, Bus
+from .models import *
 # Register your models here.
 # @admin.register(BusStand)
 # @admin.register(Routes)
@@ -13,3 +13,7 @@ class RouteAdmin(admin.ModelAdmin):
 admin.site.register(Bus, BusAdmin)
 admin.site.register(BusStand, Bus_StandAdmin)
 admin.site.register(Routes, RouteAdmin)
+admin.site.register(Tickets)
+admin.site.register(Conductor)
+admin.site.register(Driver)
+admin.site.register(Fare)
