@@ -13,7 +13,6 @@ export default function Routes(){
         async function getallroutes(){
             try{
                 const routes=await axios.get("http://127.0.0.1:8000/routes/routes/?format=json")
-                console.log(routes.data);
                 setdata1(routes.data);
             }
             catch(error){
@@ -25,11 +24,13 @@ export default function Routes(){
     const a=usebusinfo();
     console.log(a);
     const combinelist=data1.map((src,index)=>({
-        asrc: src.source,
-        bcd : a[index],
-        arch: src.reachable,
+        "asrc": src.source,
+        "bcd" : a[index],
+        "arch" : src.reachable,
 
     }))
+    console.log("hiii");
+    console.log(combinelist);
     return(
         <>
         <div className="bg-gray-200 container h-screen flex flex-col  ">
@@ -61,9 +62,9 @@ export default function Routes(){
                                     return(
                                         <>
                                        <tr key={index }>
-                                        <td className="border px-4 py-2">{routes.asrc}</td>
-                                        <td className="border px-4 py-2">{routes.bcd}</td>
-                                        <td className="border px-4 py-2">{routes.arch}</td>
+                                        <td className="border px-4 py-2">{routes.asrc.value}</td>
+                                        <td className="border px-4 py-2">{routes.bcd.value}</td>
+                                        <td className="border px-4 py-2">{routes.arch.value}</td>
 
                                     </tr>
                                     </>
