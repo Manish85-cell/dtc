@@ -9,11 +9,12 @@ const Bus=()=>{
 
   return (
     <>
-        <div className="relative inset-0  w-1/2 h-1/2  top-5">
+    <div className="bg-slate-400">
+        <div className="relative inset-0  w-1/2 h-1/2  top-5 ml-5">
             <img src="https://cracku.in/latest-govt-jobs/wp-content/uploads/2022/04/DTC-Logo.png" alt="anypic" className="w-full h-full object-cover" />
         </div>
-    <div className="flex h-1/2  relative  left-60 bottom-60 ml-80">
-      <div className="w-1/2 h-1/2 bottom-2  bg-white p-6 rounded-lg shadow-md  ml-40">/
+    <div className="flex   relative  left-60 bottom-72 ml-80">
+      <div className=" bottom-2  bg-white p-6 rounded-lg shadow-md  ml-48">/
         <h2 className="text-2xl font-bold mb-4">  EMPLOYEE LOGIN  </h2>
             <input
             type="text"
@@ -37,6 +38,7 @@ const Bus=()=>{
         </button>
       </div>
     </div>
+  </div>
     </>
   )
 }
