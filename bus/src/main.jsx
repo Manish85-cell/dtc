@@ -6,20 +6,26 @@ import './index.css';
 import Home from './component/Home';
 import Bus from './component/Bus';
 import Layout from './component/Layout';
-import Login from './component/Login';
+//import Login from './component/Login';
 import Routes from './component/Routes';
 import Loginkbaad from './component/Loginkbaad';
 import Busstand from './component/Busstand';
+import Eplogin from './component/Eplogin';
+import Clogin from './component/Clogin';
+import Dlogin from './component/Dlogin';
+import Successlogin from './component/Successlogin';
 
 const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
       <Route path='' element={<Home/>}/>
-      <Route path='bus' element={<Bus/>}/>
-      <Route path='login' element={<Login/>}/>
+      <Route path='bus' element={<Eplogin/>}/>
       <Route path='routes' element={<Routes/>}/>
       <Route path='slogin' element={<Loginkbaad/>}/>
       <Route path='busstand' element={<Busstand/>}/>
+      <Route path='clogin' element={<Clogin/>}/>
+      <Route path='dlogin' element={<Dlogin/>}/>
+      <Route path='sucesslogin/:param1/:param2/:param3' element={<Successlogin/>}/>
     </Route>
   )
 )

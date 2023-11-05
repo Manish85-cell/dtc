@@ -1,5 +1,5 @@
 from django.db import models
-
+import random
 
 # Create your models here.
 class BusStand(models.Model):
@@ -31,6 +31,7 @@ class Driver(models.Model):
     D_name = models.CharField(max_length=64)
     salary = models.IntegerField()
     working_shift = models.CharField(max_length=64)
+    # password=models.CharField(max_length=16)
     
     def __str__(self):
         return f"({self.D_id}) {self.D_name}"
@@ -39,6 +40,7 @@ class Conductor(models.Model):
     C_name = models.CharField(max_length=64)
     salary = models.IntegerField()
     working_shift = models.CharField(max_length=64)
+    # password=models.CharField(max_length=16)
     
     def __str__(self):
         return f"({self.D_id}) {self.D_name}"
@@ -61,3 +63,12 @@ class Fare(models.Model):
     Price : models.IntegerField()  
 
 
+# for _ in range(25):
+#         conductor = Conductor(
+#             C_id=random.randint(1, 100),
+#             C_name='Conductor ' + str(random.randint(1, 100)),
+#             salary=random.randint(10000, 50000),
+#             working_shift=random.choice(['Morning', 'Afternoon', 'Night']),
+#             password=''.join(random.choices('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890', k=8))
+#         )
+#         conductor.save()
