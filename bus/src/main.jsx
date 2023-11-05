@@ -19,7 +19,6 @@ const router=createBrowserRouter(
       <Route path='routes' element={<Routes/>}/>
       <Route path='slogin' element={<Loginkbaad/>}/>
     </Route>
-    
   )
 )
 ReactDOM.createRoot(document.getElementById('root')).render(
