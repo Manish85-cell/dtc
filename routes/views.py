@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .serializer import BusSerializer, BusCodesSerializer, RouteSerializer
+from .serializer import *
 from rest_framework.generics import ListAPIView
-from .models import BusStand, Bus, Routes
+from .models import *
 # from .models import BusStand
 # Create your views here.
 class BusStandsList(ListAPIView):
@@ -17,6 +17,12 @@ class BusStandsList(ListAPIView):
 class RouteList(ListAPIView):
     queryset = Routes.objects.all()
     serializer_class = RouteSerializer
+class ConductorList(ListAPIView):
+    queryset = Conductor.objects.all()
+    serializer_class = ConductorSerializer
+class DriverList(ListAPIView):
+    queryset = Driver.objects.all()
+    serializer_class = DriverSerializer
    
         
    

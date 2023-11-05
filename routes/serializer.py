@@ -1,9 +1,17 @@
 from rest_framework import serializers
-from .models import BusStand, Routes, Bus
+from .models import *
 class BusSerializer(serializers.ModelSerializer):
     class Meta:
         model = BusStand
         fields = ['code', 'Name']
+class ConductorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Conductor
+        fields = ['C_id', 'C_name', 'salary', 'working_shift']
+class DriverSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Driver
+        fields = ['D_id', 'D_name', 'salary', 'working_shift']
 class RouteSerializer(serializers.ModelSerializer):
     source = serializers.StringRelatedField()
     def to_representation(self, instance):

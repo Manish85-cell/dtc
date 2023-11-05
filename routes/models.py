@@ -46,9 +46,10 @@ class Conductor(models.Model):
 class Tickets(models.Model):
     T_id = models.IntegerField(primary_key=True)
     Bus_no = models.ForeignKey(Bus, on_delete=models.CASCADE, related_name="t_no")   
-    source = models.ForeignKey(BusStand, ondelete=models.CASCADE, related_name="dest")
-    destination = models.ForeignKey(BusStand, ondelete=models.CASCADE, related_name="src")
-    Fare = models.IntegerChoices()
+    source = models.ForeignKey(BusStand, on_delete=models.CASCADE, related_name="dest")
+    destination = models.ForeignKey(BusStand, on_delete=models.CASCADE, related_name="src")
+   
 
-# class Passenger(models.Model):
-#     first = models.CharField(max_length=64)
+   
+
+
