@@ -69,8 +69,6 @@ const Header=()=>{
                                 </NavLink>
                             </li>
                         </ul>
-
-
             </div>
          </nav>
         </header>

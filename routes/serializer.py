@@ -5,6 +5,7 @@ class BusSerializer(serializers.ModelSerializer):
         model = BusStand
         fields = ['code', 'Name']
 class RouteSerializer(serializers.ModelSerializer):
+    source = serializers.StringRelatedField()
     class Meta:
         model = Routes
         fields = ['source', 'reachable']

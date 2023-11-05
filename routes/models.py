@@ -6,7 +6,7 @@ class BusStand(models.Model):
     Name = models.CharField(max_length=64)
 
     def __str__(self):
-        return f"{self.city} ({self.code})"
+        return f"{self.Name} ({self.code})"
 
 
 class Routes(models.Model):
@@ -24,4 +24,7 @@ class Bus(models.Model):
     def __str__(self):
         return self.route
     def get_route_list(self):
-        return self.route.split(",")    
+        return self.route.split(",")  
+
+# class Passenger(models.Model):
+#     first = models.CharField(max_length=64)
