@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from requests import request
 from .serializer import BusSerializer, BusCodesSerializer, RouteSerializer
 from rest_framework.generics import ListAPIView
 from .models import BusStand, Bus, Routes
