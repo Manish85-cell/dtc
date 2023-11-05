@@ -46,8 +46,8 @@ export default function Routes(){
                         className="p-2 border rounded"
                         onChange={handleSearch}
                     />
-                    <div className="flex flex-col container h-screen">
-                    <div className="overflow-auto">
+                    <div className="flex flex-col container h-screen bg-gray-100 p-4">
+                     <div className="overflow-auto">
                         <table className="table-auto border-collapse w-full">
                         <thead>
                             <tr>
@@ -73,7 +73,7 @@ export default function Routes(){
                             }
 
                             </tbody>
-                        </table>
+                         </table>
                        
                         </div>
                     
