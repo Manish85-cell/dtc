@@ -43,7 +43,7 @@ export default function Home() {
                 <img className="sm:w-96 w-48" src="https://cracku.in/latest-govt-jobs/wp-content/uploads/2022/04/DTC-Logo.png" alt="image2" />
             </div>
 
-            <h1 className="text-center text-2xl sm:text-5xl py-10 font-medium"> TOP BUS ROUTES</h1>
+           {/* // <h1 className="text-center text-2xl sm:text-5xl py-10 font-medium"> TOP BUS ROUTES</h1> */}
         </div>
     );
 }

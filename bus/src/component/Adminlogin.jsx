@@ -4,7 +4,7 @@ import bus1 from "./bus1.png";
 import { useNavigate } from 'react-router-dom';
 
 
-const Clogin=()=>{
+const Adminlogin=()=>{
   const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -33,7 +33,7 @@ const Clogin=()=>{
       if (c && cp && c.C_id === cp.C_id) {
         // Successful login, navigate to another page
         setresult(c);
-        navigate(`/sucesslogin/${c.C_id}/${c.salary}/${c.working_shift}`);
+        navigate(`/sucessadminlogin`);
       } else {
         // Handle unsuccessful login (e.g., show an error message)
         console.log("Login failed");
@@ -50,7 +50,7 @@ const Clogin=()=>{
         </div>
     <div className="flex h-1/2  relative  left-60 bottom-60 ml-80">
       <div className="w-1/2 h-1/2 bg-white p-6 rounded-lg shadow-md  ml-40">/
-        <h2 className="text-2xl font-bold mb-4"> Conductor Login </h2>
+        <h2 className="text-2xl font-bold mb-4"> ADMIN  Login </h2>
             <input
             type="text"
             placeholder="Username"
@@ -88,4 +88,4 @@ const Clogin=()=>{
   )
     
 }
-export default Clogin;
+export default Adminlogin;

@@ -6,9 +6,7 @@ export default function Routes(){
     const [dest,getdest]=useState([]);
     const [src,setsrc]=useState("");
     const [data1,setdata1]=useState([]);
-    const handleSearch = (event) => {
-        onSearch(event.target.value);
-      }
+    
     useEffect(()=>{
         async function getallroutes(){
             try{
@@ -22,15 +20,8 @@ export default function Routes(){
         getallroutes();
     },[])
     const a=usebusinfo();
+    const searchre=data1.filter((route)=>route.source.toLowerCase().includes(src.toLowerCase()));
     console.log(a);
-    const combinelist=data1.map((src,index)=>({
-        "asrc": src.source,
-        "bcd" : a[index],
-        "arch" : src.reachable,
-
-    }))
-    console.log("hiii");
-    console.log(combinelist);
     return(
         <>
         <div className="bg-gray-200 container h-screen flex flex-col  ">
@@ -44,7 +35,7 @@ export default function Routes(){
                         type="text"
                         placeholder="Search..."
                         className="p-2 border rounded"
-                        onChange={handleSearch}
+                        onChange={(e)=>{setsrc(e.target.value)}}
                     />
                     <div className="flex flex-col container h-screen bg-gray-100 p-4">
                      <div className="overflow-auto">
@@ -57,7 +48,7 @@ export default function Routes(){
                         </thead>
                         <tbody>
                         {
-                            data1.map((rout,index)=>{
+                            searchre.map((rout,index)=>{
                                 
                                     return(
                                         <>

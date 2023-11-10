@@ -8,6 +8,7 @@ const Loginkbaad=()=>{
     const [sub,setsub]=useState(0);
     const [result,setSearchResult]=useState([]);
     const [bus,setBus]=useState(null);
+    const [fare,setfare]=useState(0);
     const b=usebusinfo();
     useEffect(()=>{
         async function getbus(){
@@ -27,20 +28,34 @@ const Loginkbaad=()=>{
          //console.log(`${from} to $ ${to}`);
          const d = dat.find((e) => e.route.some((stop) => stop === from  ));
          const e = dat.find((e) => e.route.some((stop) => stop === to  ));
+         const val1=b.find((e)=>e.Name===from);
+         const val2=b.find((e)=>e.Name===to);
+         
+         const res=document.getElementById('result');
+         const f=document.getElementById('fare');
          if(d.bus_code===e.bus_code){
             setBus(d.bus_code);
+            res.textContent="you have to travel in "+d.bus_code +" Bus No ";
          }
          else{
-            setBus(null);
+            res.textContent="sorry there are no buses ";
          }
+    
+         console.log(Math.abs(val1.code-val2.code));
+         if(Math.abs(val1.code-val2.code)<=5 && d.bus_code===e.bus_code){
+            setfare(Math.abs(val1-val2));
+            f.textContent="your fare is RS 5 (FIVE only) "
+           }
          
     }
     const handleSearch = () => {
         // You can implement your search logic here
      const num=parseInt(sub);
       const c= dat.find((e)=>e.bus_code===num);
+      const res1=document.getElementById('result1');
       if (c) {
         setSearchResult(c.route);
+        res1.textContent="Search Result Of "+ c.bus_code +"  Bus no";
       } else {
         setSearchResult(null);
       }
@@ -85,7 +100,7 @@ const Loginkbaad=()=>{
                 {
                             b.map((buss,index)=>{
                                 return(
-                                    <option key={index} value={buss.Name}>
+                                    <option key={index} value={buss.Name} >
                             {buss.Name}  {buss.code}
                             </option>
                                 )
@@ -123,9 +138,8 @@ const Loginkbaad=()=>{
               {/* Conditional rendering of the result */}
               {result !== null ? (
                 (
-                    <div className="text-blue-600 font-bold">
-                        <div className="text-2xl ">
-                Search Result of {sub} bus no
+                    <div className="text-red-600 font-bold">
+                        <div className="text-2xl text-black " id='result1'>
               </div>
                         {Object.keys(result).map((dst,index)=>{
                             return(
@@ -136,8 +150,11 @@ const Loginkbaad=()=>{
                   )
               ) :((<div className="text-gray-600">..</div>))}
             </div>
+            <div id='result' className="text-4xl text-red-500 capitalize font-bold ">
+            </div>
+            <div id='fare' className="text-4xl text-orange-500 capitalize font-bold "></div>
 
-            <div>
+            {/* <div>
                 {bus!==null ?(
                     <div className="text-blue-600 font-bold">
                     <div className="text-2xl bg-">
@@ -145,7 +162,7 @@ const Loginkbaad=()=>{
           </div>
           </div>
                 ):(<div className="text-gray-600"> Please perform a search.</div>) }
-            </div>
+            </div> */}
           </div>
         </div>
     </div>

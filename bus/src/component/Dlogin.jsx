@@ -51,7 +51,7 @@ const Dlogin=()=>{
         </div>
     <div className="flex h-1/2  relative  left-60 bottom-60 ml-80">
       <div className="w-1/2 h-1/2 bg-white p-6 rounded-lg shadow-md  ml-40">/
-        <h2 className="text-2xl font-bold mb-4"> Login </h2>
+        <h2 className="text-2xl font-bold mb-4"> Driver Login </h2>
             <input
             type="text"
             placeholder="Username"

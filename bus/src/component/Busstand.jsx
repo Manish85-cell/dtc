@@ -22,6 +22,9 @@ const Busstand=()=>{
         }
         getallbus()
     },[]);
+    const searchResults = sdata.filter((busstand) =>
+        busstand.Name.toLowerCase().includes(text.toLowerCase())
+      );
     const handleSearch = () => {
         // Filter the data to find the matching bus stand based on the searchName.
         const result = sdata.find((busstand) => busstand.Name === text);
@@ -54,7 +57,7 @@ const Busstand=()=>{
         </tr>
       </thead>
       <tbody>
-        {sdata.map((busstand, index) => (
+        {searchResults.map((busstand, index) => (
           <tr key={index}>
             <td className="border px-4 py-2">{busstand.code}</td>
             <td className="border px-4 py-2">{busstand.Name}</td>

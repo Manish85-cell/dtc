@@ -14,6 +14,8 @@ import Eplogin from './component/Eplogin';
 import Clogin from './component/Clogin';
 import Dlogin from './component/Dlogin';
 import Successlogin from './component/Successlogin';
+import Adminlogin from './component/Adminlogin';
+import Successadminlogin from './component/Successadminlogin';
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -26,6 +28,8 @@ const router=createBrowserRouter(
       <Route path='clogin' element={<Clogin/>}/>
       <Route path='dlogin' element={<Dlogin/>}/>
       <Route path='sucesslogin/:param1/:param2/:param3' element={<Successlogin/>}/>
+      <Route path='adminlogin' element={<Adminlogin/>}/>
+      <Route path='sucessadminlogin' element={<Successadminlogin/>}/>
     </Route>
   )
 )
