@@ -16,6 +16,8 @@ import Dlogin from './component/Dlogin';
 import Successlogin from './component/Successlogin';
 import Adminlogin from './component/Adminlogin';
 import Successadminlogin from './component/Successadminlogin';
+import Ticket from './component/Ticket';
+import Afterticket from './component/Afterticket';
 
 const router=createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +32,8 @@ const router=createBrowserRouter(
       <Route path='sucesslogin/:param1/:param2/:param3' element={<Successlogin/>}/>
       <Route path='adminlogin' element={<Adminlogin/>}/>
       <Route path='sucessadminlogin' element={<Successadminlogin/>}/>
+      <Route path='ticket' element={<Ticket/>}/>
+      <Route path='afterticket/:param1' element={<Afterticket/>}/>
     </Route>
   )
 )

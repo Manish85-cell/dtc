@@ -122,7 +122,7 @@ const Loginkbaad=()=>{
             <input type="text"
                 placeholder='search by bus no'
                 className="p-2 border  w-1/3"
-                onChange={(e)=>{setsub(e.target.value)}}
+                onChange={(e)=>setsub(e.target.value)}
             />
             <button
             className="bg-blue-500 text-white p-2 rounded"
